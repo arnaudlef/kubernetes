@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-phpmyadmin
+spec:
+  containers:
+    - name: phpmyadmin-container
+  image: phpmyadmin/phpmyadmin
+  ports:
+    - containerPort: 80
+  env:
+    - name: PMA_HOST
+      value: pod-mysql
+    - name: PMA_USER
+      value: root
+    - name: PMA_PASSWORD
+      value: root
